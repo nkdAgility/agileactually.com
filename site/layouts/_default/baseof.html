@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="{{- or site.Language.LanguageCode }}" dir="{{- or site.Language.LanguageDirection `ltr` }}" data-bs-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{{- "css/style.css" | relURL }}" />
+    <title>Agile Actually</title>
+  </head>
+  <body data-ndka-environment="{{- hugo.Environment }}" data-ndka-version="v#{GitVersion.SemVer}#">
+    <!-- Scripts -->
+    <script src="{{- "js/vendor/bootstrap.bundle.min.js" | relURL }}"></script>
+    <script src="{{- "js/vendor/jquery.min.js" | relURL }}"></script>
+    <script src="{{- "js/vendor/swiper-bundle.min.js" | relURL }}"></script>
+    <script src="{{- "js/script.js" | relURL }}"></script>
+    <script src="{{- "js/swiper-script.js" | relURL }}"></script>
+    <script src="{{- "js/submit-form.js" | relURL }}"></script>
+    <script src="{{- "js/vendor/isotope.pkgd.min.js" | relURL }}"></script>
+    <script src="{{- "js/video_embedded.js" | relURL }}"></script>
+    <!-- Scripts -->
+    {{ if ne hugo.Environment "production" }}
+      <div class="container-fluid text-center p-2 bg-brand-{{- hugo.Environment }}">
+        {{ if .Page.Draft }}!!DRAFT!! |{{ end }}
+        {{ if eq hugo.Environment "development" }}
+          Local | v0.0.0 | No Robots
+        {{ else }}
+          #{nkdAgility_AzureSitesConfig}# | v#{GitVersion.SemVer}# | No Robots
+        {{ end }}
+        | <a href="#debugArea" class="">Debug Info</a>
+      </div>
+    {{ end }}
+    {{- block "header" . }}
+      <!-- HEADER -->
+      <header class="bg-secondary-dark sticky-top">
+        <div class="r-container">
+          <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="/">
+                <div class="logo-container">
+                  <img src="{{- "image/logo.png" | relURL }}" alt="logo" class="img-fluid" />
+                </div>
+              </a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fa-solid fa-bars-staggered"></i>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0 gap-3">
+                  {{- $page := .Page }}
+                  {{- range site.Menus.main }}
+                    <li class="nav-item">
+                      <a class="nav-link" aria-current="page" href="{{ .URL }}">{{ .Title }}</a>
+                    </li>
+                  {{- end }}
+                </ul>
+                <div class="social-container mb-lg-0 mb-3">
+                  <a href="https://www.youtube.com" class="social-item">
+                    <i class="fa-brands fa-youtube"></i>
+                  </a>
+                  <a href="https://www.spotify.com" class="social-item">
+                    <i class="fa-brands fa-spotify"></i>
+                  </a>
+                  <a href="https://www.soundcloud.com" class="social-item">
+                    <i class="fa-brands fa-soundcloud"></i>
+                  </a>
+                  <a href="https://www.twitter.com" class="social-item">
+                    <i class="fa-brands fa-twitter"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </nav>
+        </div>
+      </header>
+      <!-- END HEADER -->
+    {{- end }}
+    <main>
+      {{- block "banner" . }}
+        <section class="section position-relative" style="background-image: url({{- "image/dummy-img-1920x900.jpg" | relURL }});">
+          <div class="image-overlay"></div>
+          <div class="r-container  position-relative" style="z-index: 2;">
+            <div class="d-flex flex-column">
+              <h2 class="font-1 fw-bold">Our <span class="accent-color">{{ .Page.Title }}</span></h2>
+              <nav aria-label="breadcrumb">
+                <ol class="breadcrumb font-2">
+                  {{ $page := . }}
+                  {{- range .Ancestors.Reverse }}
+                    <li class="breadcrumb-item">
+                      <a href="{{ $page.Parent.RelPermalink }}">
+                        {{ if .IsHome }}
+                          Home
+                        {{ else }}
+                          {{ .Title }}
+                        {{ end }}
+                      </a>
+                    </li>
+                  {{ end }}
+                  <li class="breadcrumb-item active" aria-current="page">{{ .Title }}</li>
+                </ol>
+              </nav>
+            </div>
+          </div>
+        </section>
+      {{- end }}
+      {{- block "main" . }}
+        generic
+      {{- end }}
+    </main>
+    {{- block "footer" . }}
+      <!-- FOOTER -->
+      <footer>
+        <div class="position-relative bg-attach-fixed" style="background-image: url({{- "image/dummy-img-1920x900.jpg" | relURL }});">
+          <div class="image-overlay"></div>
+          <div class="r-container position-relative" style="z-index: 2;">
+            <div class="section border-bottom border-white">
+              <div class="row row-cols-1 row-cols-lg-2 w-100">
+                <div class="col col-lg-4 mb-3">
+                  <div class="d-flex flex-column gap-3">
+                    <img src="{{- "image/logo.png" | relURL }}" alt="logo" class="img-fluid w-75" />
+                    <p>Welcome to Agile Actually, the podcast that brings you authentic agile concepts, insights, and wisdom from two of the most respected, progressive agile experts in the industry. Simon Reindl and Martin Hinshelwood.</p>
+                    <div class="social-container mb-lg-0 mb-3">
+                      <a href="https://www.youtube.com" class="social-item">
+                        <i class="fa-brands fa-youtube"></i>
+                      </a>
+                      <a href="https://www.spotify.com" class="social-item">
+                        <i class="fa-brands fa-spotify"></i>
+                      </a>
+                      <a href="https://www.soundcloud.com" class="social-item">
+                        <i class="fa-brands fa-soundcloud"></i>
+                      </a>
+                      <a href="https://www.twitter.com" class="social-item">
+                        <i class="fa-brands fa-twitter"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col col-lg-8 mb-3">
+                  <div class="row row-cols-1 row-cols-lg-3 justify-content-center">
+                    <div class="col col-lg-3 mb-3">
+                      <div class="d-flex flex-column gap-3 px-4 px-lg-5">
+                        <h5 class="font-1 fw-bold">Pages</h5>
+                        <ul class="list">
+                          {{- $page := .Page }}
+                          {{- range site.Menus.main }}
+                            <li class="d-flex flex-row align-items-center gap-3">
+                              <i class="fa-solid fa-chevron-right accent-color"></i>
+                              <a href="{{ .URL }}" class="link-white">{{ .Title }}</a>
+                            </li>
+                          {{- end }}
+                        </ul>
+                      </div>
+                    </div>
+                    <div class="col col-lg-3 mb-3">
+                      <div class="d-flex flex-column gap-3 px-4">
+                        <h5 class="font-1 fw-bold">Listed On</h5>
+                        <img src="{{- "image/youtube.png" | relURL }}" alt="youtube" class="img-fluid" />
+                        <img src="{{- "image/spotify.png" | relURL }}" alt="spotify" class="img-fluid" />
+                        <img src="{{- "image/google_podcast.png" | relURL }}" alt="google podcast" class="img-fluid" />
+                      </div>
+                    </div>
+                    <div class="col col-lg-6 mb-3">
+                      <div class="d-flex flex-column gap-3 px-5">
+                        <h5 class="font-1 fw-bold">Information</h5>
+                        <div class="d-flex flex-column gap-3">
+                          <div class="d-flex flex-row gap-3 align-items-center">
+                            <div class="rounded-circle bg-accent-color d-flex align-items-center justify-content-center" style="width: 3rem; height: 3rem;">
+                              <span class="text-white fs-3"><i class="fa-solid fa-envelope"></i></span>
+                            </div>
+                            <div class="d-flex flex-column">
+                              <span class="fs-4 font-1 fw-bold">Email</span>
+                              <span class="accent-color">contact@agileactually.com</span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="py-4 text-center">
+              <p class="m-0">Copyright {{ now.Format "2006" }} © All Right Reserved</p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    {{- end }}
+
+    {{- if ne hugo.Environment "production" }}
+      <div id="debugArea" class="container-fluid p-2 bg-brand-{{- hugo.Environment }}">
+        <section class="container my-2">
+          <button class="btn btn-primary mb-3" type="button" data-bs-toggle="collapse" data-bs-target="#debugSection" aria-expanded="false" aria-controls="debugSection">Show Debug Information</button>
+
+          <div class="collapse" id="debugSection">
+            <p>This is content visible only in development.</p>
+            <table class="table table-striped table-bordered">
+              <thead>
+                <tr>
+                  <th>Node</th>
+                  <th>Value</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>debug</td>
+                  <td><pre>{{- debug.Dump .Params }}</pre></td>
+                </tr>
+                <tr>
+                  <td>This Page</td>
+                  <td>Template not set</td>
+                </tr>
+                <tr>
+                  <td>Template</td>
+                  <td>{{- block "template" . }}{{- end }}</td>
+                </tr>
+                <tr>
+                  <td>Layout</td>
+                  <td>{{- .Layout }}</td>
+                </tr>
+                <tr>
+                  <td>Kind</td>
+                  <td>{{- .Kind }}</td>
+                </tr>
+                <tr>
+                  <td>Type</td>
+                  <td>{{- .Type }}</td>
+                </tr>
+                <tr>
+                  <td>Section</td>
+                  <td>{{- .Section }}</td>
+                </tr>
+                <tr>
+                  <td>CurrentSection</td>
+                  <td>{{- .CurrentSection }}</td>
+                </tr>
+                <tr>
+                  <td>Section Info</td>
+                  <td>
+                    {{- if and .IsSection .Parent }}
+                      <p>This is a subsection (child section of {{- .Parent.Title }}).</p>
+                    {{- else if .IsSection }}
+                      <p>This is a top-level section.</p>
+                    {{- end }}
+                  </td>
+                </tr>
+                <tr>
+                  <td>Child Sections</td>
+                  <td>
+                    {{- if gt (len .Sections) 0 }}
+                      <p>This section has child sections.</p>
+                      <ul>
+                        {{- range .Sections }}
+                          <li><a href="{{- .Permalink }}">{{- .Title }}</a></li>
+                        {{- end }}
+                      </ul>
+                    {{- else }}
+                      <p>This section has no child sections.</p>
+                    {{- end }}
+                  </td>
+                </tr>
+                <tr>
+                  <td>Ancestors</td>
+                  <td>
+                    <ol>
+                      {{- range .Ancestors.Reverse }}
+                        <li><a href="{{- .Permalink }}">{{- .Title }}</a></li>
+                      {{- end }}
+                      <li>{{- .Title }}</li>
+                    </ol>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Subsections</td>
+                  <td>
+                    <ul>
+                      {{- range .Sections }}
+                        <li>
+                          <a href="{{- .Permalink }}">{{- .Title }}</a> ()
+                          {{- if .IsSection }}
+                            <ul>
+                              {{- range .Sections }}
+                                <li><a href="{{- .Permalink }}">{{- .Title }}</a></li>
+                              {{- end }}
+                            </ul>
+                          {{- end }}
+                        </li>
+                      {{- end }}
+                    </ul>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Pages</td>
+                  <td>
+                    <ul>
+                      {{- $groups := .Pages.GroupBy "Type" }}
+                      {{- range $groups }}
+                        <li>
+                          {{- .Key }}
+                          <ul>
+                            {{- range .Pages }}
+                              <li>
+                                <a href="{{- .Permalink }}">{{- .Title }}</a>
+                                [Type: {{- .Type }}]
+                                {{- if .Layout }}[Layout: {{- .Layout }}]{{- end }}
+                              </li>
+                            {{- end }}
+                          </ul>
+                        </li>
+                      {{- end }}
+                    </ul>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </div>
+    {{- end }}
+
+  </body>
+</html>

@@ -1,0 +1,53 @@
+languageCode: en
+title: Agile Actually
+
+publishDir: ../public
+resourceDir: ../resources
+
+summaryLength: 30
+
+enableRobotsTXT: true
+
+# Site-wide parameters
+params:
+  description: "Welcome to Agile Actually with Simon Reindl & Martin Hinshelwood, the podcast that brings you authentic agile concepts, insights, and wisdom from two of the most respected, progressive agile experts in the industry."
+  keywords: "Agile, Scrum, Kanban, lean"
+  og_image: "/images/og-image.jpg" # URL to the default Open Graph image
+  editURL: "https://github.com/nkdAgility/agileactually.com/edit/main/site/content/" # URL to edit content on GitHub
+
+# Enable sitemap and robots.txt
+sitemap:
+  filename: "sitemap.xml"
+  changefreq: "daily"
+  priority: 0.5
+
+# RSS feed settings
+rss:
+  filename: "rss.xml"
+  name: "RSS Feed"
+  description: "Subscribe to our RSS feed"
+
+outputs:
+  home: [html, json, rss]
+  section: [html, rss]
+  taxonomy: [html, rss]
+  term: [html, rss]
+  page: [html, rss]
+
+outputFormats:
+  json:
+    mediaType: "application/json"
+    baseName: "pages"
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true # Allows raw HTML in Markdown
+    extensions:
+      table: true
+      linkify: true
+      typographer: true
+    parser:
+      attribute:
+        block: true
+        title: true
