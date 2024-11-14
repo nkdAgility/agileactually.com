@@ -1,0 +1,22 @@
+{{ $data := dict }}
+{{ $url := "https://anchor.fm/s/de0e5360/podcast/rss" }}
+{{ with resources.GetRemote $url }}
+  {{ with .Err }}
+    {{ errorf "%s" . }}
+  {{ else }}
+    {{ $data = . | transform.Unmarshal }}
+    {{ warnf "data loaded %q" $url }}
+  {{ end }}
+{{ else }}
+  {{ errorf "Unable to get remote resource %q" $url }}
+{{ end }}
+
+{{ warnf "Item: %q" $data }}
+
+{{ if $data.item }}
+  {{ range $data.item }}
+    {{ warnf "Item: %q" .title }}
+  {{ end }}
+{{ else }}
+  {{ warnf "NoItems" }}
+{{ end }}
