@@ -1,0 +1,14 @@
+{{- $n := . | int -}}
+{{- $lastDigit := mod $n 10 -}}
+{{- $suffix := "th" -}}
+
+{{- if not (and (ge $n 11) (le $n 13)) -}}
+  {{- if eq $lastDigit 1 -}}
+    {{- $suffix = "st" -}}
+  {{- else if eq $lastDigit 2 -}}
+    {{- $suffix = "nd" -}}
+  {{- else if eq $lastDigit 3 -}}
+    {{- $suffix = "rd" -}}
+  {{- end -}}
+{{- end -}}
+{{ $n }}<sup>{{ $suffix }}</sup>
