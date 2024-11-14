@@ -1,0 +1,13 @@
+{{- $durationMs := . -}}
+{{- $totalSeconds := div $durationMs 1000 -}}
+{{- $hours := div $totalSeconds 3600 | int -}}
+{{- $minutes := mod (div $totalSeconds 60) 60 -}}
+{{- if gt $hours 0 -}}
+  {{- $hours }}hr
+{{- end -}}
+{{- if gt $minutes 0 -}}
+  {{- if gt $hours 0 -}}
+    {{- " " -}}
+  {{- end -}}
+  {{- $minutes }}m
+{{- end -}}

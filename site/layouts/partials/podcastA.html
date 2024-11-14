@@ -8,19 +8,23 @@
         </button>
       </div>
     </div>
-    <img src="{{ "image/dummy-img-600x400.jpg" | relURL }}" alt="image" class="img-fluid rounded-3" />
+    {{ if .Params.preview }}
+      <img src="{{ .Params.preview | relURL }}" alt="image" class="img-fluid rounded-3" />
+    {{ else }}
+      <img src="{{ "/image/dummy-img-600x400.jpg" | relURL }}" alt="image" class="img-fluid rounded-3" />
+    {{ end }}
   </div>
   <div class="d-flex flex-row gap-5">
     <div class="d-flex flex-row align-items-center gap-2">
       <i class="fa-regular fa-clock accent-color"></i>
-      1hr 24m
+      {{- partial "duration-in-hours.html" .Params.duration }}
     </div>
     <div class="d-flex flex-row align-items-center gap-2">
       <i class="fa-solid fa-calendar-days accent-color"></i>
-      13 October 2023
+      {{ .Date | time.Format  "2 January 2006" }}
     </div>
   </div>
-  <h5 class="font-1 fw-bold lh-1">Bryan Knoxville: How to Live a Life Full of Music | E106</h5>
+  <h5 class="font-1 fw-bold lh-1">{{ .Title }}</h5>
 </div>
 <div class="modal fade bg-overlay" id="modal-1" tabindex="-1" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered modal-lg">

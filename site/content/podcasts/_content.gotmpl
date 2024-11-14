@@ -9,13 +9,13 @@
       "duration" .duration_ms
       "preview" (index .images 0).url
       "audio_preview_url" .audio_preview_url
+      "id" .id
     }}
     {{ $dates := dict "date" (time.AsTime .release_date) }}
     {{ $page := dict
       "content" $content
       "title" .name
       "slug" (urlize .name)
-      "date" .release_date
       "type" "podcasts"
       "path" (urlize .name)
       "params" $params

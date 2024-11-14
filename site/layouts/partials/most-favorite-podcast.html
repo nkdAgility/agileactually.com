@@ -6,15 +6,13 @@
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi pharetra magna a lacus dignissim, sed scelerisque elit rutrum. Nam a pulvinar sapien, a placerat arcu. Nam condimentum orci et semper rutrum.
       </p>
       <div class="row row-cols-1 row-cols-lg-3 w-100 text-start">
-        <div class="col  mb-3">
-          {{ partial "podcastA.html" . }}
-        </div>
-        <div class="col  mb-3">
-          {{ partial "podcastA.html" . }}
-        </div>
-        <div class="col  mb-3">
-          {{ partial "podcastA.html" . }}
-        </div>
+        {{ $targetIds := slice "3LEaVHBStIllvP1hLkfkl3" "5gOaOrHXLCpnUvinv1RJGX" "4Ecjpkzht6Hl1s96OjKzFT" }}
+        {{ $podcastPages := where .Site.Pages "Type" "podcasts" }}
+        {{ range $podcastPages }}
+          {{ if in $targetIds .Params.id }}
+            {{ partial "podcastA.html" . }}
+          {{ end }}
+        {{ end }}
       </div>
     </div>
   </div>
