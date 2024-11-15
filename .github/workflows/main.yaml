@@ -175,6 +175,10 @@ jobs:
       - name: getEpisodeList.ps1
         run: |
           ./.powershell/getEpisodeList.ps1
+        shell: pwsh
+        env:
+          SPOTIFY_CLIENT_SECRET: ${{ secrets.SPOTIFY_CLIENT_SECRET }}
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
       - uses: cschleiden/replace-tokens@v1
         with:
           files: '["**/*.html", "**/*.yaml"]'
