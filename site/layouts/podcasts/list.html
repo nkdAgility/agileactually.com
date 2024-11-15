@@ -23,64 +23,45 @@
     </div>
   </section>
 
-  <!-- Subscribe -->
-  <section class="section">
+  {{/* <!-- Subscribe -->
+    <section class="section">
     <div class="r-container">
-      <div class="section position-relative rounded-4 overflow-hidden bg-attach-fixed" style="background-image: url(image/agile-actually-simon-martin.jpg);">
-        <div class="image-overlay-2"></div>
-        <div class="row row-cols-1 row-cols-lg-2 position-relative" style="z-index: 2;">
-          <div class="col  mb-3">
-            <h3 class="font-1 fw-bold lh-1"><span class="accent-color">Subscribe</span> For The Latest Episodes</h3>
-            <p class="text-gray">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.</p>
-          </div>
-          <div class="col  mb-3">
-            <div class="d-flex h-100 flex-column justify-content-center">
-              <h5 class="font-1 fw-bold">Newsletter</h5>
-              <form class="w-100 form needs-validation">
-                <input type="text" name="action" value="subscribe" hidden />
-                <div class="input-group mb-3">
-                  <input type="email" name="email" class="form-control py-3 px-4 form-white" placeholder="Your Email" aria-label="Recipient's username" aria-describedby="button-addon2" required />
-                  <button class="btn button btn_submit-subscribe font-1  fw-bold px-5" type="submit" id="button-addon2">Subscribe</button>
-                </div>
-              </form>
-            </div>
-            <div class="toast-container position-fixed bottom-0 end-0 p-3">
-              <div id="liveToast" class="toast success_msg_subscribe bg-dark-transparent text-white" role="alert" aria-live="assertive" aria-atomic="true">
-                <div class="d-flex">
-                  <div class="toast-body">Your Subscribe Send Successfully!.</div>
-                  <button type="button" class="btn me-2 m-auto text-white" data-bs-dismiss="toast" aria-label="Close">
-                    <i class="fa-solid fa-xmark"></i>
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+    <div class="section position-relative rounded-4 overflow-hidden bg-attach-fixed" style="background-image: url(image/agile-actually-simon-martin.jpg);">
+    <div class="image-overlay-2"></div>
+    <div class="row row-cols-1 row-cols-lg-2 position-relative" style="z-index: 2;">
+    <div class="col  mb-3">
+    <h3 class="font-1 fw-bold lh-1"><span class="accent-color">Subscribe</span> For The Latest Episodes</h3>
+    <p class="text-gray">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.</p>
     </div>
-  </section>
+    <div class="col  mb-3">
+    <div class="d-flex h-100 flex-column justify-content-center">
+    <h5 class="font-1 fw-bold">Newsletter</h5>
+    <form class="w-100 form needs-validation">
+    <input type="text" name="action" value="subscribe" hidden />
+    <div class="input-group mb-3">
+    <input type="email" name="email" class="form-control py-3 px-4 form-white" placeholder="Your Email" aria-label="Recipient's username" aria-describedby="button-addon2" required />
+    <button class="btn button btn_submit-subscribe font-1  fw-bold px-5" type="submit" id="button-addon2">Subscribe</button>
+    </div>
+    </form>
+    </div>
+    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+    <div id="liveToast" class="toast success_msg_subscribe bg-dark-transparent text-white" role="alert" aria-live="assertive" aria-atomic="true">
+    <div class="d-flex">
+    <div class="toast-body">Your Subscribe Send Successfully!.</div>
+    <button type="button" class="btn me-2 m-auto text-white" data-bs-dismiss="toast" aria-label="Close">
+    <i class="fa-solid fa-xmark"></i>
+    </button>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </section>
+  */}}
 
-  <section class="section bg-secondary-color">
-    <div class="r-container">
-      <div class="d-flex flex-column gap-3 text-center">
-        <h5 class="font-1 fw-bold">Listen Our Podcast On</h5>
-        <div class="row row-cols-1 row-cols-lg-4">
-          <div class="col px-5 mb-3">
-            <img src="{{- "image/youtube.png" | relURL }}" alt="youtube" class="img-fluid" />
-          </div>
-          <div class="col px-5 mb-3">
-            <img src="{{- "image/spotify.png" | relURL }}" alt="spotify" class="img-fluid" />
-          </div>
-          <div class="col px-5 mb-3">
-            <img src="{{- "image/soundcloud.png" | relURL }}" alt="soundcloud" class="img-fluid" />
-          </div>
-          <div class="col px-5 mb-3">
-            <img src="{{- "image/google_podcast.png" | relURL }}" alt="google podcast" class="img-fluid" />
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+
   <section class="container my-2">
     {{- .Content }}
   </section>

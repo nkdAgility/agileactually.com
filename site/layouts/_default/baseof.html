@@ -4,7 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="{{- "css/style.css" | relURL }}" />
-    <title>Agile Actually</title>
+    <title>{{ .Title }} | Agile Actually</title>
+    <meta name="description" content="{{- (.Summary | default .Site.Params.description) | plainify }}" />
+    <meta name="keywords" content="{{- .Keywords | default .Site.Params.keywords }}" />
+    <meta property="og:title" content="{{ .Title }}" />
+    <meta name="giscus:backlink" content="https://agileactually.com{{- .RelPermalink }}" />
+    <meta name="giscus:description" content="{{- .Summary }}" />
+    <meta name="copyright" content="{{- printf "© 2013-%s Martin Hinshelwood & Simon Reindl All rights reserved." (now.Format "2006") }}" />
+    <meta name="license" content="© {{- now.Format "2006" }} Martin Hinshelwood & Simon Reindl. All content is copyrighted. No reproduction or distribution without permission." />
   </head>
   <body data-ndka-environment="{{- hugo.Environment }}" data-ndka-version="v#{GitVersion.SemVer}#">
     <!-- Scripts -->
@@ -52,17 +59,11 @@
                   {{- end }}
                 </ul>
                 <div class="social-container mb-lg-0 mb-3">
-                  <a href="https://www.youtube.com" class="social-item">
+                  <a href="https://www.youtube.com/@AgileActually" class="social-item">
                     <i class="fa-brands fa-youtube"></i>
                   </a>
-                  <a href="https://www.spotify.com" class="social-item">
+                  <a href="https://open.spotify.com/show/27PyDccVtzuOWFtB7Qi84q?si=a44d6845d8334992" class="social-item">
                     <i class="fa-brands fa-spotify"></i>
-                  </a>
-                  <a href="https://www.soundcloud.com" class="social-item">
-                    <i class="fa-brands fa-soundcloud"></i>
-                  </a>
-                  <a href="https://www.twitter.com" class="social-item">
-                    <i class="fa-brands fa-twitter"></i>
                   </a>
                 </div>
               </div>
@@ -117,17 +118,11 @@
                     <img src="{{- "image/logo.png" | relURL }}" alt="logo" class="img-fluid w-75" />
                     <p>Welcome to Agile Actually, the podcast that brings you authentic agile concepts, insights, and wisdom from two of the most respected, progressive agile experts in the industry. Simon Reindl and Martin Hinshelwood.</p>
                     <div class="social-container mb-lg-0 mb-3">
-                      <a href="https://www.youtube.com" class="social-item">
+                      <a href="https://www.youtube.com/@AgileActually" class="social-item">
                         <i class="fa-brands fa-youtube"></i>
                       </a>
-                      <a href="https://www.spotify.com" class="social-item">
-                        <i class="fa-brands fa-spotify"></i>
-                      </a>
-                      <a href="https://www.soundcloud.com" class="social-item">
-                        <i class="fa-brands fa-soundcloud"></i>
-                      </a>
-                      <a href="https://www.twitter.com" class="social-item">
-                        <i class="fa-brands fa-twitter"></i>
+                      <a href="https://github.com/nkdAgility/agileactually.com/discussions/" class="social-item">
+                        <i class="fa-brands fa-github"></i>
                       </a>
                     </div>
                   </div>

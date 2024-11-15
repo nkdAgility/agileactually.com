@@ -4,47 +4,48 @@
       <div class="d-flex flex-lg-row flex-column-reverse gap-3">
         <div class="col col-lg-4 pe-lg-4">
           <div class="d-flex flex-column gap-3">
-            <div class="bg-secondary-color d-flex flex-column gap-3 rounded-3 px-5 py-4">
+            {{/* <div class="bg-secondary-color d-flex flex-column gap-3 rounded-3 px-5 py-4">
               <h5 class="accent-color border-bottom border-accent-color pb-2 font-1 fw-bold">Categories</h5>
               <ul class="list gap-2">
-                <li>
-                  <div class="d-flex flex-row align-items-center gap-2">
-                    <i class="fa-solid fa-circle-arrow-right accent-color"></i>
-                    <a href="" class="link-white">Bussiness</a>
-                  </div>
-                </li>
-                <li>
-                  <div class="d-flex flex-row align-items-center gap-2">
-                    <i class="fa-solid fa-circle-arrow-right accent-color"></i>
-                    <a href="" class="link-white">Comedy</a>
-                  </div>
-                </li>
-                <li>
-                  <div class="d-flex flex-row align-items-center gap-2">
-                    <i class="fa-solid fa-circle-arrow-right accent-color"></i>
-                    <a href="" class="link-white">Lifestyle</a>
-                  </div>
-                </li>
-                <li>
-                  <div class="d-flex flex-row align-items-center gap-2">
-                    <i class="fa-solid fa-circle-arrow-right accent-color"></i>
-                    <a href="" class="link-white">Music</a>
-                  </div>
-                </li>
-                <li>
-                  <div class="d-flex flex-row align-items-center gap-2">
-                    <i class="fa-solid fa-circle-arrow-right accent-color"></i>
-                    <a href="" class="link-white">News</a>
-                  </div>
-                </li>
-                <li>
-                  <div class="d-flex flex-row align-items-center gap-2">
-                    <i class="fa-solid fa-circle-arrow-right accent-color"></i>
-                    <a href="" class="link-white">Tips & Tricks</a>
-                  </div>
-                </li>
+              <li>
+              <div class="d-flex flex-row align-items-center gap-2">
+              <i class="fa-solid fa-circle-arrow-right accent-color"></i>
+              <a href="" class="link-white">Bussiness</a>
+              </div>
+              </li>
+              <li>
+              <div class="d-flex flex-row align-items-center gap-2">
+              <i class="fa-solid fa-circle-arrow-right accent-color"></i>
+              <a href="" class="link-white">Comedy</a>
+              </div>
+              </li>
+              <li>
+              <div class="d-flex flex-row align-items-center gap-2">
+              <i class="fa-solid fa-circle-arrow-right accent-color"></i>
+              <a href="" class="link-white">Lifestyle</a>
+              </div>
+              </li>
+              <li>
+              <div class="d-flex flex-row align-items-center gap-2">
+              <i class="fa-solid fa-circle-arrow-right accent-color"></i>
+              <a href="" class="link-white">Music</a>
+              </div>
+              </li>
+              <li>
+              <div class="d-flex flex-row align-items-center gap-2">
+              <i class="fa-solid fa-circle-arrow-right accent-color"></i>
+              <a href="" class="link-white">News</a>
+              </div>
+              </li>
+              <li>
+              <div class="d-flex flex-row align-items-center gap-2">
+              <i class="fa-solid fa-circle-arrow-right accent-color"></i>
+              <a href="" class="link-white">Tips & Tricks</a>
+              </div>
+              </li>
               </ul>
-            </div>
+              </div>
+              */}}
             <div class="bg-secondary-color d-flex flex-column gap-3 rounded-3 px-5 py-4">
               <h5 class="accent-color border-bottom border-accent-color pb-2 font-1 fw-bold">Recent Post</h5>
               <div class="d-flex flex-column gap-3">
@@ -71,25 +72,16 @@
               <div class="image-overlay"></div>
               <div class="position-relative p-5 d-flex flex-column gap-3" style="z-index:2 ;">
                 <h5 class="border-bottom border-accent-color pb-2 font-1 fw-bold">Send Your Question</h5>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus luctus.</p>
+                <p>Anything on Agile, Scrum, Kanban, and everyting inbetween!</p>
                 <div>
-                  <a href="#" class="btn button font-1 fw-bold ls-2">CONTACT US</a>
+                  <a href="https://github.com/nkdAgility/agileactually.com/discussions/" target="_blank" class="btn button font-1 fw-bold ls-2">CONTACT US</a>
                 </div>
               </div>
             </div>
             <div class="bg-secondary-color d-flex flex-column gap-3 rounded-3 px-5 py-4">
               <h5 class="accent-color border-bottom border-accent-color pb-2 font-1 fw-bold">Follow Us On</h5>
               <div class="social-container mb-lg-0 mb-3">
-                <a href="https://www.facebook.com" class="social-item">
-                  <i class="fa-brands fa-facebook-f"></i>
-                </a>
-                <a href="https://www.twitter.com" class="social-item">
-                  <i class="fa-brands fa-twitter"></i>
-                </a>
-                <a href="https://www.instagram.com" class="social-item">
-                  <i class="fa-brands fa-instagram"></i>
-                </a>
-                <a href="https://www.youtube.com" class="social-item">
+                <a href="https://www.youtube.com/@AgileActually" class="social-item">
                   <i class="fa-brands fa-youtube"></i>
                 </a>
               </div>
@@ -120,6 +112,24 @@
                 src="https://open.spotify.com/embed/episode/{{ .Params.id }}/video?utm_source=oembed"
                 style="aspect-ratio: 16 / 9;"></iframe>
               {{ .Content | markdownify }}
+            </div>
+            <div class="py-4">
+              <script
+                src="https://giscus.app/client.js"
+                data-repo="nkdAgility/agileactually.com"
+                data-repo-id="R_kgDONPXSvQ"
+                data-category="Podcasts"
+                data-category-id="DIC_kwDONPXSvc4CkTH-"
+                data-mapping="og:title"
+                data-strict="0"
+                data-reactions-enabled="1"
+                data-emit-metadata="0"
+                data-input-position="bottom"
+                data-theme="dark"
+                data-lang="en"
+                data-loading="lazy"
+                crossorigin="anonymous"
+                async></script>
             </div>
           </div>
         </div>
