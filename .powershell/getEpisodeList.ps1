@@ -1,53 +1,101 @@
-# Define your Client ID and Client Secret
-$clientId = "1120c6949df54792975a405bbdcaa3bf"
-$clientSecret = $Env:SPOTIFY_CLIENT_SECRET
+# Define your Spotify Client ID and Client Secret
+$spotifyClientId = "1120c6949df54792975a405bbdcaa3bf"
+$spotifyClientSecret = $Env:SPOTIFY_CLIENT_SECRET
 
-# Define the token endpoint
-$tokenUri = "https://accounts.spotify.com/api/token"
+# Define your YouTube Data API Key
+$youtubeApiKey = $Env:YOUTUBE_API_KEY
 
-# Prepare the headers
-$headers = @{
+# Define the YouTube channel ID to restrict searches
+$youtubeChannelId = "UCQxOqOLPrgtWJAKJzOgR5uw" # Replace with your desired channel's ID
+
+# Spotify token endpoint
+$spotifyTokenUri = "https://accounts.spotify.com/api/token"
+
+# Prepare the headers for Spotify authentication
+$spotifyHeaders = @{
     "Content-Type" = "application/x-www-form-urlencoded"
 }
 
-# Prepare the body
-$body = @{
+# Prepare the body for Spotify authentication
+$spotifyBody = @{
     grant_type    = "client_credentials"
-    client_id     = $clientId
-    client_secret = $clientSecret
+    client_id     = $spotifyClientId
+    client_secret = $spotifyClientSecret
 }
 
-# Send the request to get the access token
-$response = Invoke-RestMethod -Method Post -Uri $tokenUri -Headers $headers -Body $body
-$accessToken = $response.access_token
+# Request Spotify access token
+$spotifyResponse = Invoke-RestMethod -Method Post -Uri $spotifyTokenUri -Headers $spotifyHeaders -Body $spotifyBody
+$spotifyAccessToken = $spotifyResponse.access_token
 
-# Define the Spotify Show ID
-$showId = "27PyDccVtzuOWFtB7Qi84q"
+# Spotify Show ID
+$spotifyShowId = "27PyDccVtzuOWFtB7Qi84q"
 
-# Set the API endpoint
-$episodesUri = "https://api.spotify.com/v1/shows/$showId/episodes?limit=50&offset=0"
+# Spotify episodes API endpoint
+$spotifyEpisodesUri = "https://api.spotify.com/v1/shows/$spotifyShowId/episodes?limit=50&offset=0"
 
-# Prepare the headers with the access token
-$headers = @{
-    Authorization = "Bearer $accessToken"
+# Prepare Spotify headers with the access token
+$spotifyAuthHeaders = @{
+    Authorization = "Bearer $spotifyAccessToken"
 }
 
-# Send the request to get the episodes
-$response = Invoke-RestMethod -Method Get -Uri $episodesUri -Headers $headers
+# Fetch episodes from Spotify
+$spotifyEpisodesResponse = Invoke-RestMethod -Method Get -Uri $spotifyEpisodesUri -Headers $spotifyAuthHeaders
+$episodes = $spotifyEpisodesResponse.items
+
+# Function to fetch the oEmbed iframe for a given Spotify episode URL
+function Get-EpisodeIframe {
+    param (
+        [string]$episodeUrl
+    )
+    $oEmbedApi = "https://open.spotify.com/oembed?url=$episodeUrl"
+    $oEmbedResponse = Invoke-RestMethod -Method Get -Uri $oEmbedApi
+    return $oEmbedResponse.html
+}
+
+# Function to search YouTube for a video matching the episode title within a specific channel and return the video ID
+function Get-YouTubeVideoId {
+    param (
+        [string]$searchQuery
+    )
+    $youtubeSearchApi = "https://www.googleapis.com/youtube/v3/search?part=snippet&type=video&q=$($searchQuery -replace ' ', '+')&channelId=$youtubeChannelId&key=$youtubeApiKey&maxResults=1"
+    $youtubeResponse = Invoke-RestMethod -Method Get -Uri $youtubeSearchApi
+
+    if ($youtubeResponse.items.Count -gt 0) {
+        return $youtubeResponse.items[0].id.videoId
+    }
+    else {
+        return $null
+    }
+}
+
+# Augment episodes with iframe and YouTube video ID data
+foreach ($episode in $episodes) {
+    $episodeUrl = $episode.external_urls.spotify
+    $iframeHtml = Get-EpisodeIframe -episodeUrl $episodeUrl
+
+    # Add the iframe property dynamically
+    $episode | Add-Member -MemberType NoteProperty -Name "iframe" -Value $iframeHtml
+
+    # Search YouTube using the episode's name and get the video ID
+    $youtubeVideoId = Get-YouTubeVideoId -searchQuery $episode.name
+
+    # Add the YouTube video ID dynamically
+    $episode | Add-Member -MemberType NoteProperty -Name "youtube_video_id" -Value $youtubeVideoId
+}
 
 # Define the target directory and file path
 $targetDirectory = "site/data"
 $targetFilePath = "$targetDirectory/episodes.json"
 
-# Ensure the target directory exists; create it if it doesn't
+# Ensure the target directory exists
 if (-Not (Test-Path -Path $targetDirectory)) {
     New-Item -Path $targetDirectory -ItemType Directory -Force
 }
 
-# Convert the episode data to JSON
-$jsonData = $response.items | ConvertTo-Json -Depth 10
+# Convert the augmented episodes to JSON
+$jsonData = $episodes | ConvertTo-Json -Depth 10
 
 # Save the JSON data to the file
 Set-Content -Path $targetFilePath -Value $jsonData -Encoding UTF8
 
-Write-Output "Episodes have been saved to $targetFilePath"
+Write-Output "Episodes with iframes and YouTube video IDs have been saved to $targetFilePath"
