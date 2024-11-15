@@ -7,6 +7,7 @@
     <title>{{ .Title }} | Agile Actually</title>
     <meta name="description" content="{{- (.Summary | default .Site.Params.description) | plainify }}" />
     <meta name="keywords" content="{{- .Keywords | default .Site.Params.keywords }}" />
+    <link rel="canonical" href="https://agileactually.com{{- .RelPermalink }}" />
     <meta property="og:title" content="{{ .Title }}" />
     <meta name="giscus:backlink" content="https://agileactually.com{{- .RelPermalink }}" />
     <meta name="giscus:description" content="{{- .Summary }}" />
