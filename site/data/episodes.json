@@ -38,8 +38,11 @@
     "release_date_precision": "day",
     "type": "episode",
     "uri": "spotify:episode:3LEaVHBStIllvP1hLkfkl3",
-    "iframe": "<iframe style=\"border-radius: 12px\" width=\"624\" height=\"351\" title=\"Spotify Embed: Power &amp; Politics! Communicating and Building Political Capital for Agile Transformations!\" frameborder=\"0\" allowfullscreen allow=\"autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture\" loading=\"lazy\" src=\"https://open.spotify.com/embed/episode/3LEaVHBStIllvP1hLkfkl3/video?utm_source=oembed\"></iframe>",
-    "youtube_video_id": "LA3CIxYy3m8"
+    "oembed_title": "Power & Politics! Communicating and Building Political Capital for Agile Transformations!",
+    "oembed_thumbnail_url": "https://i.scdn.co/image/ab67656300005f1fbaf5c61d8017b841f3ccd1c6",
+    "oembed_html": "<iframe style=\"border-radius: 12px\" width=\"624\" height=\"351\" title=\"Spotify Embed: Power &amp; Politics! Communicating and Building Political Capital for Agile Transformations!\" frameborder=\"0\" allowfullscreen allow=\"autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture\" loading=\"lazy\" src=\"https://open.spotify.com/embed/episode/3LEaVHBStIllvP1hLkfkl3/video?utm_source=oembed\"></iframe>",
+    "oembed_url": "https://open.spotify.com/embed/episode/3LEaVHBStIllvP1hLkfkl3/video?utm_source=oembed",
+    "youtube_video_id": null
   },
   {
     "audio_preview_url": "https://podz-content.spotifycdn.com/audio/clips/7iVbUCIF0o3g5bA3GfjvR7/clip_347836_407836.mp3",
@@ -80,8 +83,11 @@
     "release_date_precision": "day",
     "type": "episode",
     "uri": "spotify:episode:2sT2nROL9UGKsKGrkgW0LY",
-    "iframe": "<iframe style=\"border-radius: 12px\" width=\"624\" height=\"351\" title=\"Spotify Embed: Agile at Microsoft\" frameborder=\"0\" allowfullscreen allow=\"autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture\" loading=\"lazy\" src=\"https://open.spotify.com/embed/episode/2sT2nROL9UGKsKGrkgW0LY/video?utm_source=oembed\"></iframe>",
-    "youtube_video_id": "CC4tZG1w-Mw"
+    "oembed_title": "Agile at Microsoft",
+    "oembed_thumbnail_url": "https://i.scdn.co/image/ab67656300005f1fbf933b48a1963526291e97df",
+    "oembed_html": "<iframe style=\"border-radius: 12px\" width=\"624\" height=\"351\" title=\"Spotify Embed: Agile at Microsoft\" frameborder=\"0\" allowfullscreen allow=\"autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture\" loading=\"lazy\" src=\"https://open.spotify.com/embed/episode/2sT2nROL9UGKsKGrkgW0LY/video?utm_source=oembed\"></iframe>",
+    "oembed_url": "https://open.spotify.com/embed/episode/2sT2nROL9UGKsKGrkgW0LY/video?utm_source=oembed",
+    "youtube_video_id": null
   },
   {
     "audio_preview_url": "https://podz-content.spotifycdn.com/audio/clips/0LV2QYQlhE0KgO5KZ49PDU/clip_614932_674932.mp3",
@@ -122,8 +128,11 @@
     "release_date_precision": "day",
     "type": "episode",
     "uri": "spotify:episode:10uHQxi2SRHbWXgGC6Bnzw",
-    "iframe": "<iframe style=\"border-radius: 12px\" width=\"624\" height=\"351\" title=\"Spotify Embed: Mindset Versus Philosophy\" frameborder=\"0\" allowfullscreen allow=\"autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture\" loading=\"lazy\" src=\"https://open.spotify.com/embed/episode/10uHQxi2SRHbWXgGC6Bnzw/video?utm_source=oembed\"></iframe>",
-    "youtube_video_id": "2GqcNjEXNzk"
+    "oembed_title": "Mindset Versus Philosophy",
+    "oembed_thumbnail_url": "https://i.scdn.co/image/ab67656300005f1f693ff6e9a0fcd95445681856",
+    "oembed_html": "<iframe style=\"border-radius: 12px\" width=\"624\" height=\"351\" title=\"Spotify Embed: Mindset Versus Philosophy\" frameborder=\"0\" allowfullscreen allow=\"autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture\" loading=\"lazy\" src=\"https://open.spotify.com/embed/episode/10uHQxi2SRHbWXgGC6Bnzw/video?utm_source=oembed\"></iframe>",
+    "oembed_url": "https://open.spotify.com/embed/episode/10uHQxi2SRHbWXgGC6Bnzw/video?utm_source=oembed",
+    "youtube_video_id": null
   },
   {
     "audio_preview_url": "https://podz-content.spotifycdn.com/audio/clips/5hQc9sdg9cXuz83lfhG8Tw/clip_607923_667923.mp3",
@@ -164,8 +173,11 @@
     "release_date_precision": "day",
     "type": "episode",
     "uri": "spotify:episode:1bouCJJKac0MPgFFEaJyGq",
-    "iframe": "<iframe style=\"border-radius: 12px\" width=\"624\" height=\"351\" title=\"Spotify Embed: Enterprise Agility\" frameborder=\"0\" allowfullscreen allow=\"autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture\" loading=\"lazy\" src=\"https://open.spotify.com/embed/episode/1bouCJJKac0MPgFFEaJyGq/video?utm_source=oembed\"></iframe>",
-    "youtube_video_id": "eeLA6MTJLJ0"
+    "oembed_title": "Enterprise Agility",
+    "oembed_thumbnail_url": "https://i.scdn.co/image/ab67656300005f1f2e34577a5fe7f0a6f226354c",
+    "oembed_html": "<iframe style=\"border-radius: 12px\" width=\"624\" height=\"351\" title=\"Spotify Embed: Enterprise Agility\" frameborder=\"0\" allowfullscreen allow=\"autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture\" loading=\"lazy\" src=\"https://open.spotify.com/embed/episode/1bouCJJKac0MPgFFEaJyGq/video?utm_source=oembed\"></iframe>",
+    "oembed_url": "https://open.spotify.com/embed/episode/1bouCJJKac0MPgFFEaJyGq/video?utm_source=oembed",
+    "youtube_video_id": null
   },
   {
     "audio_preview_url": "https://podz-content.spotifycdn.com/audio/clips/2eGzOPgbJwNd4UoNakVDGg/clip_176366_236366.mp3",
@@ -206,7 +218,10 @@
     "release_date_precision": "day",
     "type": "episode",
     "uri": "spotify:episode:4nxJcTneeQVZeQw8FYRrnI",
-    "iframe": "<iframe style=\"border-radius: 12px\" width=\"624\" height=\"351\" title=\"Spotify Embed: Agile Alchemy\" frameborder=\"0\" allowfullscreen allow=\"autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture\" loading=\"lazy\" src=\"https://open.spotify.com/embed/episode/4nxJcTneeQVZeQw8FYRrnI/video?utm_source=oembed\"></iframe>",
+    "oembed_title": "Agile Alchemy",
+    "oembed_thumbnail_url": "https://i.scdn.co/image/ab67656300005f1fab36e8bcd0d32a3e932bafbb",
+    "oembed_html": "<iframe style=\"border-radius: 12px\" width=\"624\" height=\"351\" title=\"Spotify Embed: Agile Alchemy\" frameborder=\"0\" allowfullscreen allow=\"autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture\" loading=\"lazy\" src=\"https://open.spotify.com/embed/episode/4nxJcTneeQVZeQw8FYRrnI/video?utm_source=oembed\"></iframe>",
+    "oembed_url": "https://open.spotify.com/embed/episode/4nxJcTneeQVZeQw8FYRrnI/video?utm_source=oembed",
     "youtube_video_id": null
   },
   {
@@ -248,8 +263,11 @@
     "release_date_precision": "day",
     "type": "episode",
     "uri": "spotify:episode:60GjA3dexfE6nmdvPoqxof",
-    "iframe": "<iframe style=\"border-radius: 12px\" width=\"624\" height=\"351\" title=\"Spotify Embed: Continuous Delivery\" frameborder=\"0\" allowfullscreen allow=\"autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture\" loading=\"lazy\" src=\"https://open.spotify.com/embed/episode/60GjA3dexfE6nmdvPoqxof/video?utm_source=oembed\"></iframe>",
-    "youtube_video_id": "FCcOX9v_9yk"
+    "oembed_title": "Continuous Delivery",
+    "oembed_thumbnail_url": "https://i.scdn.co/image/ab67656300005f1f3f6a6d3281fafc3e8af590bd",
+    "oembed_html": "<iframe style=\"border-radius: 12px\" width=\"624\" height=\"351\" title=\"Spotify Embed: Continuous Delivery\" frameborder=\"0\" allowfullscreen allow=\"autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture\" loading=\"lazy\" src=\"https://open.spotify.com/embed/episode/60GjA3dexfE6nmdvPoqxof/video?utm_source=oembed\"></iframe>",
+    "oembed_url": "https://open.spotify.com/embed/episode/60GjA3dexfE6nmdvPoqxof/video?utm_source=oembed",
+    "youtube_video_id": null
   },
   {
     "audio_preview_url": "https://podz-content.spotifycdn.com/audio/clips/4mjHZ9AxKAsJGY2W8lhJMU/clip_400736_460736.mp3",
@@ -290,8 +308,11 @@
     "release_date_precision": "day",
     "type": "episode",
     "uri": "spotify:episode:5gOaOrHXLCpnUvinv1RJGX",
-    "iframe": "<iframe style=\"border-radius: 12px\" width=\"624\" height=\"351\" title=\"Spotify Embed: Ethics in Agile\" frameborder=\"0\" allowfullscreen allow=\"autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture\" loading=\"lazy\" src=\"https://open.spotify.com/embed/episode/5gOaOrHXLCpnUvinv1RJGX/video?utm_source=oembed\"></iframe>",
-    "youtube_video_id": "FCcOX9v_9yk"
+    "oembed_title": "Ethics in Agile",
+    "oembed_thumbnail_url": "https://i.scdn.co/image/ab67656300005f1f01668a2ec9b0be2b390a7696",
+    "oembed_html": "<iframe style=\"border-radius: 12px\" width=\"624\" height=\"351\" title=\"Spotify Embed: Ethics in Agile\" frameborder=\"0\" allowfullscreen allow=\"autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture\" loading=\"lazy\" src=\"https://open.spotify.com/embed/episode/5gOaOrHXLCpnUvinv1RJGX/video?utm_source=oembed\"></iframe>",
+    "oembed_url": "https://open.spotify.com/embed/episode/5gOaOrHXLCpnUvinv1RJGX/video?utm_source=oembed",
+    "youtube_video_id": null
   },
   {
     "audio_preview_url": "https://podz-content.spotifycdn.com/audio/clips/3G0gTRSlbceC0mLoYIoS5l/clip_640280_700280.mp3",
@@ -332,8 +353,11 @@
     "release_date_precision": "day",
     "type": "episode",
     "uri": "spotify:episode:370aUUSMn8LlwfjrgZoHd7",
-    "iframe": "<iframe style=\"border-radius: 12px\" width=\"624\" height=\"351\" title=\"Spotify Embed: Words matter.\" frameborder=\"0\" allowfullscreen allow=\"autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture\" loading=\"lazy\" src=\"https://open.spotify.com/embed/episode/370aUUSMn8LlwfjrgZoHd7/video?utm_source=oembed\"></iframe>",
-    "youtube_video_id": "EcfCdaF9b9I"
+    "oembed_title": "Words matter.",
+    "oembed_thumbnail_url": "https://i.scdn.co/image/ab67656300005f1fb9d65357e904cf093f4ce153",
+    "oembed_html": "<iframe style=\"border-radius: 12px\" width=\"624\" height=\"351\" title=\"Spotify Embed: Words matter.\" frameborder=\"0\" allowfullscreen allow=\"autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture\" loading=\"lazy\" src=\"https://open.spotify.com/embed/episode/370aUUSMn8LlwfjrgZoHd7/video?utm_source=oembed\"></iframe>",
+    "oembed_url": "https://open.spotify.com/embed/episode/370aUUSMn8LlwfjrgZoHd7/video?utm_source=oembed",
+    "youtube_video_id": null
   },
   {
     "audio_preview_url": "https://podz-content.spotifycdn.com/audio/clips/3XNvN4BDTWQkFdvo5scTlK/clip_614167_674167.mp3",
@@ -374,8 +398,11 @@
     "release_date_precision": "day",
     "type": "episode",
     "uri": "spotify:episode:6LcIvzb81bwqODR3hhUnQa",
-    "iframe": "<iframe style=\"border-radius: 12px\" width=\"624\" height=\"351\" title=\"Spotify Embed: Are office spaces dead\" frameborder=\"0\" allowfullscreen allow=\"autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture\" loading=\"lazy\" src=\"https://open.spotify.com/embed/episode/6LcIvzb81bwqODR3hhUnQa/video?utm_source=oembed\"></iframe>",
-    "youtube_video_id": "cKWVVYxrcHw"
+    "oembed_title": "Are office spaces dead",
+    "oembed_thumbnail_url": "https://i.scdn.co/image/ab67656300005f1f9ac5311f4734e232fad70779",
+    "oembed_html": "<iframe style=\"border-radius: 12px\" width=\"624\" height=\"351\" title=\"Spotify Embed: Are office spaces dead\" frameborder=\"0\" allowfullscreen allow=\"autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture\" loading=\"lazy\" src=\"https://open.spotify.com/embed/episode/6LcIvzb81bwqODR3hhUnQa/video?utm_source=oembed\"></iframe>",
+    "oembed_url": "https://open.spotify.com/embed/episode/6LcIvzb81bwqODR3hhUnQa/video?utm_source=oembed",
+    "youtube_video_id": null
   },
   {
     "audio_preview_url": "https://podz-content.spotifycdn.com/audio/clips/5MEiFc8e1e5pyJzCfaGhpQ/clip_2768400_2821200.mp3",
@@ -416,8 +443,11 @@
     "release_date_precision": "day",
     "type": "episode",
     "uri": "spotify:episode:4734iiQaczSmTlAT7tbKzR",
-    "iframe": "<iframe style=\"border-radius: 12px\" width=\"624\" height=\"351\" title=\"Spotify Embed: Product owners are obsolete!\" frameborder=\"0\" allowfullscreen allow=\"autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture\" loading=\"lazy\" src=\"https://open.spotify.com/embed/episode/4734iiQaczSmTlAT7tbKzR/video?utm_source=oembed\"></iframe>",
-    "youtube_video_id": "H0BkB3b9CVM"
+    "oembed_title": "Product owners are obsolete!",
+    "oembed_thumbnail_url": "https://i.scdn.co/image/ab67656300005f1f75b940ec1f01b43642b1d123",
+    "oembed_html": "<iframe style=\"border-radius: 12px\" width=\"624\" height=\"351\" title=\"Spotify Embed: Product owners are obsolete!\" frameborder=\"0\" allowfullscreen allow=\"autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture\" loading=\"lazy\" src=\"https://open.spotify.com/embed/episode/4734iiQaczSmTlAT7tbKzR/video?utm_source=oembed\"></iframe>",
+    "oembed_url": "https://open.spotify.com/embed/episode/4734iiQaczSmTlAT7tbKzR/video?utm_source=oembed",
+    "youtube_video_id": null
   },
   {
     "audio_preview_url": "https://podz-content.spotifycdn.com/audio/clips/5FouHhWWMtnl9EhIiF9r5x/clip_210738_270738.mp3",
@@ -458,7 +488,10 @@
     "release_date_precision": "day",
     "type": "episode",
     "uri": "spotify:episode:4Ecjpkzht6Hl1s96OjKzFT",
-    "iframe": "<iframe style=\"border-radius: 12px\" width=\"624\" height=\"351\" title=\"Spotify Embed: Life coaches masquerading as Agile Coaches\" frameborder=\"0\" allowfullscreen allow=\"autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture\" loading=\"lazy\" src=\"https://open.spotify.com/embed/episode/4Ecjpkzht6Hl1s96OjKzFT/video?utm_source=oembed\"></iframe>",
+    "oembed_title": "Life coaches masquerading as Agile Coaches",
+    "oembed_thumbnail_url": "https://i.scdn.co/image/ab67656300005f1fe0e946428ba5a074483b305c",
+    "oembed_html": "<iframe style=\"border-radius: 12px\" width=\"624\" height=\"351\" title=\"Spotify Embed: Life coaches masquerading as Agile Coaches\" frameborder=\"0\" allowfullscreen allow=\"autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture\" loading=\"lazy\" src=\"https://open.spotify.com/embed/episode/4Ecjpkzht6Hl1s96OjKzFT/video?utm_source=oembed\"></iframe>",
+    "oembed_url": "https://open.spotify.com/embed/episode/4Ecjpkzht6Hl1s96OjKzFT/video?utm_source=oembed",
     "youtube_video_id": null
   }
 ]

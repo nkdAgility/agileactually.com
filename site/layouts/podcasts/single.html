@@ -48,33 +48,23 @@
             <div class="bg-secondary-color d-flex flex-column gap-3 rounded-3 px-5 py-4">
               <h5 class="accent-color border-bottom border-accent-color pb-2 font-1 fw-bold">Recent Post</h5>
               <div class="d-flex flex-column gap-3">
-                <div class="row row-cols-2">
-                  <div class="col-5">
-                    <img src="/image/dummy-img-600x500.jpg" alt="image" class="img-fluid rounded-3" />
+                {{ $podcastPages := where (where .Site.Pages.ByDate.Reverse "Type" "podcasts") "Kind" "page" }}
+                {{ range first 3 $podcastPages }}
+                  <div class="row row-cols-2">
+                    <div class="col-5">
+                      {{ if .Params.preview }}
+                        <img src="{{ .Params.preview | relURL }}" alt="image" class="img-fluid rounded-3" />
+                      {{ else }}
+                        <img src="{{ "/image/dummy-img-600x500.jpg" | relURL }}" alt="image" class="img-fluid rounded-3" />
+                      {{ end }}
+                    </div>
+                    <div class="col-7 p-0 d-flex flex-column justify-content-center">
+                      <a href="{{ .Permalink }}" class="link-white font-1">{{ .Title }}</a>
+                      <span class="accent-color">{{ .Date | time.Format  "2 January 2006" }}</span>
+                    </div>
                   </div>
-                  <div class="col-7 p-0 d-flex flex-column justify-content-center">
-                    <a href="#" class="link-white font-1">Moundy Rose: The State of Entrepreneurship</a>
-                    <span class="accent-color">May 9, 2022</span>
-                  </div>
-                </div>
-                <div class="row row-cols-2">
-                  <div class="col-5">
-                    <img src="/image/dummy-img-600x500.jpg" alt="image" class="img-fluid rounded-3" />
-                  </div>
-                  <div class="col-7 p-0 d-flex flex-column justify-content-center">
-                    <a href="#" class="link-white font-1">Jane Gastambide: How to Love Yourself to the Core</a>
-                    <span class="accent-color">May 9, 2022</span>
-                  </div>
-                </div>
-                <div class="row row-cols-2">
-                  <div class="col-5">
-                    <img src="/image/dummy-img-600x500.jpg" alt="image" class="img-fluid rounded-3" />
-                  </div>
-                  <div class="col-7 p-0 d-flex flex-column justify-content-center">
-                    <a href="#" class="link-white font-1">Bill Stevan: How to Market a Restaurant on Social Media</a>
-                    <span class="accent-color">May 9, 2022</span>
-                  </div>
-                </div>
+                {{ end }}
+
               </div>
             </div>
             <div class="position-relative overflow-hidden rounded-3" style="background-image: url(/image/dummy-img-600x500.jpg);">
@@ -108,39 +98,28 @@
         </div>
         <div class="col col-lg-8">
           <div class="d-flex flex-column gap-3">
-            <h2 class="font-1 fw-bold lh-1">Goodsound: What is a Podcast? Here's How to Listen to a Podcast</h2>
+            <h2 class="font-1 fw-bold lh-1">{{ .Title }}</h2>
             <div class="d-flex flex-row gap-5">
               <div class="d-flex flex-row align-items-center gap-2">
                 <i class="fa-solid fa-user accent-color"></i>
-                <span>Goodsound</span>
+                <span>Simon & Martin</span>
               </div>
               <div class="d-flex flex-row align-items-center gap-2">
                 <i class="fa-solid fa-calendar accent-color"></i>
-                <span>May 5, 2023</span>
+                <span>{{ .Date | time.Format  "2 January 2006" }}</span>
               </div>
             </div>
-            <img src="/image/dummy-img-600x500.jpg" alt="image" class="img-fluid rounded-3" />
             <div>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas odio felis, gravida id diam id, interdum ullamcorper mauris. Mauris at enim eu est convallis fringilla vel id nibh. Nam vestibulum eros nec nisl fermentum tempus. Nulla
-                vitae orci id est ullamcorper faucibus sed dapibus erat. Duis id sollicitudin eros. Nam placerat augue in sodales egestas. Donec elementum sollicitudin cursus. Fusce semper turpis a orci vulputate, a egestas dui dignissim. Sed at mattis
-                lacus, id facilisis mi.
-              </p>
-              <p>
-                Donec scelerisque euismod quam, non interdum tortor tempus quis. Nullam in pretium justo. Sed fringilla lacinia velit, a volutpat ipsum accumsan at. Fusce gravida ligula in arcu accumsan, vitae tristique lacus sagittis. Aenean a dignissim
-                mauris, quis dignissim ipsum. Quisque et ligula id nunc commodo hendrerit. Sed suscipit urna massa, eget tempus massa imperdiet ac. Fusce fringilla aliquam molestie. Sed non dolor vel ex accumsan tempus. Phasellus mollis nunc in purus
-                pulvinar interdum. Nullam viverra odio id magna semper feugiat.
-              </p>
-              <p>
-                Integer vestibulum malesuada arcu id interdum. Mauris semper neque tempor mauris molestie molestie. Nam accumsan nec lorem bibendum imperdiet. Maecenas consequat pretium augue quis dapibus. Suspendisse vel quam id felis blandit porta.
-                Pellentesque in purus sed justo pretium egestas. Vestibulum id rhoncus ex, sit amet placerat erat. Maecenas vulputate, mi sed mattis gravida, velit nisi auctor nisl, et maximus nulla eros semper ligula. Nunc laoreet sapien at mi facilisis,
-                id auctor leo suscipit. Donec ultrices non justo id pretium. Donec blandit purus in eleifend luctus. Donec ultrices dui vel est cursus porta. Integer dapibus ultricies scelerisque. Duis volutpat interdum auctor.
-              </p>
-              <p>
-                Curabitur nunc elit, efficitur in accumsan eu, sollicitudin sit amet mauris. Nam eu est interdum, lacinia urna in, scelerisque justo. Nulla luctus elementum nisi sed porttitor. Morbi tincidunt diam vitae est ornare, sit amet cursus augue
-                suscipit. Morbi eu efficitur tellus, non efficitur odio. Praesent sodales tortor quis nisi tristique, blandit vestibulum massa vestibulum. Quisque risus nulla, tempor sit amet augue at, venenatis porta dolor. Nullam aliquam arcu orci, eu
-                luctus massa pharetra vitae. Nunc at turpis mollis, semper sapien ut, venenatis libero. Donec hendrerit nibh quis purus semper commodo non nec erat. Maecenas vitae rutrum sem gut.
-              </p>
+              <iframe
+                width="100%"
+                title="Spotify Embed: Power &amp; Politics! Communicating and Building Political Capital for Agile Transformations!"
+                frameborder="0"
+                allowfullscreen
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                loading="lazy"
+                src="https://open.spotify.com/embed/episode/{{ .Params.id }}/video?utm_source=oembed"
+                style="aspect-ratio: 16 / 9;"></iframe>
+              {{ .Content | markdownify }}
             </div>
           </div>
         </div>

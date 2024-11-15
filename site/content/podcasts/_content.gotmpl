@@ -2,8 +2,8 @@
 {{ if $episodes }}
   {{ range $episodes }}
     {{ $content := dict
-      "mediaType" "text/markdown"
-      "value" (printf "%s\n\n%s" .description .iframe)
+      "mediaType" "text/html"
+      "value" .html_description
     }}
     {{ $params := dict
       "duration" .duration_ms
@@ -11,6 +11,7 @@
       "audio_preview_url" .audio_preview_url
       "id" .id
       "youtube_video_id" .youtube_video_id
+      "embed" .iframe
     }}
     {{ $dates := dict "date" (time.AsTime .release_date) }}
     {{ $page := dict

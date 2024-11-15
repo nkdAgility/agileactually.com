@@ -42,14 +42,14 @@ $spotifyAuthHeaders = @{
 $spotifyEpisodesResponse = Invoke-RestMethod -Method Get -Uri $spotifyEpisodesUri -Headers $spotifyAuthHeaders
 $episodes = $spotifyEpisodesResponse.items
 
-# Function to fetch the oEmbed iframe for a given Spotify episode URL
-function Get-EpisodeIframe {
+# Function to fetch the full oEmbed response for a given Spotify episode URL
+function Get-EpisodeOEmbed {
     param (
         [string]$episodeUrl
     )
     $oEmbedApi = "https://open.spotify.com/oembed?url=$episodeUrl"
     $oEmbedResponse = Invoke-RestMethod -Method Get -Uri $oEmbedApi
-    return $oEmbedResponse.html
+    return $oEmbedResponse
 }
 
 # Function to search YouTube for a video matching the episode title within a specific channel and return the video ID
@@ -68,13 +68,16 @@ function Get-YouTubeVideoId {
     }
 }
 
-# Augment episodes with iframe and YouTube video ID data
+# Augment episodes with oEmbed data and YouTube video ID
 foreach ($episode in $episodes) {
     $episodeUrl = $episode.external_urls.spotify
-    $iframeHtml = Get-EpisodeIframe -episodeUrl $episodeUrl
+    $oEmbedData = Get-EpisodeOEmbed -episodeUrl $episodeUrl
 
-    # Add the iframe property dynamically
-    $episode | Add-Member -MemberType NoteProperty -Name "iframe" -Value $iframeHtml
+    # Add oEmbed properties dynamically
+    $episode | Add-Member -MemberType NoteProperty -Name "oembed_title" -Value $oEmbedData.title
+    $episode | Add-Member -MemberType NoteProperty -Name "oembed_thumbnail_url" -Value $oEmbedData.thumbnail_url
+    $episode | Add-Member -MemberType NoteProperty -Name "oembed_html" -Value $oEmbedData.html
+    $episode | Add-Member -MemberType NoteProperty -Name "oembed_url" -Value $oEmbedData.iframe_url
 
     # Search YouTube using the episode's name and get the video ID
     $youtubeVideoId = Get-YouTubeVideoId -searchQuery $episode.name
@@ -98,4 +101,4 @@ $jsonData = $episodes | ConvertTo-Json -Depth 10
 # Save the JSON data to the file
 Set-Content -Path $targetFilePath -Value $jsonData -Encoding UTF8
 
-Write-Output "Episodes with iframes and YouTube video IDs have been saved to $targetFilePath"
+Write-Output "Episodes with oEmbed data and YouTube video IDs have been saved to $targetFilePath"

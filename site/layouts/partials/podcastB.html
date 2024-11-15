@@ -23,9 +23,17 @@
   </div>
 </div>
 <div class="modal fade bg-overlay" id="e119" tabindex="-1" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-lg">
+  <div class="modal-dialog modal-dialog-centered modal-xl">
     <div class="modal-content bg-dark-color">
-      <iframe class="ifr-video" src="https://www.youtube.com/embed/{{ .Params.youtube_video_id }}?autoplay=0"></iframe>
+      <iframe
+        width="100%"
+        title="Spotify Embed: Power &amp; Politics! Communicating and Building Political Capital for Agile Transformations!"
+        frameborder="0"
+        allowfullscreen
+        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+        loading="lazy"
+        src="https://open.spotify.com/embed/episode/{{ .Params.id }}/video?utm_source=oembed"
+        style="aspect-ratio: 16 / 9;"></iframe>
     </div>
   </div>
 </div>
