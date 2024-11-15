@@ -172,6 +172,9 @@ jobs:
       - uses: actions/checkout@v4
         with:
           submodules: true # Fetch Hugo themes (true OR recursive)
+      - name: getEpisodeList.ps1
+        run: |
+          ./.powershell/getEpisodeList.ps1
       - uses: cschleiden/replace-tokens@v1
         with:
           files: '["**/*.html", "**/*.yaml"]'
