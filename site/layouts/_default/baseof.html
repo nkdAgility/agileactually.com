@@ -78,7 +78,7 @@
           <div class="image-overlay"></div>
           <div class="r-container  position-relative" style="z-index: 2;">
             <div class="d-flex flex-column">
-              <h2 class="font-1 fw-bold">Our <span class="accent-color">{{ .Page.Title }}</span></h2>
+              <h2 class="font-1 fw-bold">{{ if eq .Kind "section" }}Our&nbsp;{{ end }}<span class="accent-color">{{ .Page.Title }}</span></h2>
               <nav aria-label="breadcrumb">
                 <ol class="breadcrumb font-2">
                   {{ $page := . }}
