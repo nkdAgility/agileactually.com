@@ -3,7 +3,7 @@ $spotifyClientId = "1120c6949df54792975a405bbdcaa3bf"
 $spotifyClientSecret = $Env:SPOTIFY_CLIENT_SECRET
 
 # Define your YouTube Data API Key
-$youtubeApiKey = $Env:YOUTUBE_API_KEY
+#$youtubeApiKey = $Env:YOUTUBE_API_KEY
 
 # Define the YouTube channel ID to restrict searches
 $youtubeChannelId = "UCQxOqOLPrgtWJAKJzOgR5uw" # Replace with your desired channel's ID
@@ -53,20 +53,20 @@ function Get-EpisodeOEmbed {
 }
 
 # Function to search YouTube for a video matching the episode title within a specific channel and return the video ID
-function Get-YouTubeVideoId {
-    param (
-        [string]$searchQuery
-    )
-    $youtubeSearchApi = "https://www.googleapis.com/youtube/v3/search?part=snippet&type=video&q=$($searchQuery -replace ' ', '+')&channelId=$youtubeChannelId&key=$youtubeApiKey&maxResults=1"
-    $youtubeResponse = Invoke-RestMethod -Method Get -Uri $youtubeSearchApi
+# function Get-YouTubeVideoId {
+#     param (
+#         [string]$searchQuery
+#     )
+#     $youtubeSearchApi = "https://www.googleapis.com/youtube/v3/search?part=snippet&type=video&q=$($searchQuery -replace ' ', '+')&channelId=$youtubeChannelId&key=$youtubeApiKey&maxResults=1"
+#     $youtubeResponse = Invoke-RestMethod -Method Get -Uri $youtubeSearchApi
 
-    if ($youtubeResponse.items.Count -gt 0) {
-        return $youtubeResponse.items[0].id.videoId
-    }
-    else {
-        return $null
-    }
-}
+#     if ($youtubeResponse.items.Count -gt 0) {
+#         return $youtubeResponse.items[0].id.videoId
+#     }
+#     else {
+#         return $null
+#     }
+# }
 
 # Augment episodes with oEmbed data and YouTube video ID
 foreach ($episode in $episodes) {
@@ -79,11 +79,10 @@ foreach ($episode in $episodes) {
     $episode | Add-Member -MemberType NoteProperty -Name "oembed_html" -Value $oEmbedData.html
     $episode | Add-Member -MemberType NoteProperty -Name "oembed_url" -Value $oEmbedData.iframe_url
 
-    # Search YouTube using the episode's name and get the video ID
-    $youtubeVideoId = Get-YouTubeVideoId -searchQuery $episode.name
-
-    # Add the YouTube video ID dynamically
-    $episode | Add-Member -MemberType NoteProperty -Name "youtube_video_id" -Value $youtubeVideoId
+    ## Search YouTube using the episode's name and get the video ID
+    #$youtubeVideoId = Get-YouTubeVideoId -searchQuery $episode.name
+    ## Add the YouTube video ID dynamically
+    #$episode | Add-Member -MemberType NoteProperty -Name "youtube_video_id" -Value $youtubeVideoId
 }
 
 # Define the target directory and file path
